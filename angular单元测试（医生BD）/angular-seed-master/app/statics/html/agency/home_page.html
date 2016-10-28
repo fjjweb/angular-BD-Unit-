@@ -1,0 +1,91 @@
+<!--头部-->
+<header>
+    <div class="logo"></div>
+    <div class="menu" ng-controller="BackToLoginCtrl"  >
+        <span ng-model="loginPerson" style="color:#fff;">{{loginPerson}}管理员</span>
+        <a href="javascript:void(0);" title="退出"><i ng-click="BackToLogin()"></i></a>
+    </div>
+</header>
+
+
+<div class="allContainer">
+    <!--侧边栏-->
+    <div class="aside"></div>
+    <!--内容区-->
+    <div class="mainContainier">
+        <nav>
+            <button class="addBtn addBtn1" ng-click="addDoctor()" style="display:none">添加医生</button>
+            <button class="addBtn addBtn2" ng-click="addDoctorBD()">添加医生BD</button>
+        </nav>
+
+        <!--数据展现-->
+        <div class="tableContext">
+            <table>
+                <thead>
+                <tr>
+                    <th>医生BD姓名</th>
+                    <th>医生BD登录名</th>
+                    <th>拓展医生数</th>
+                    <th>间接拓展医生数</th>
+                    <th>管理医生BD数</th>
+                    <th>上级BD</th>
+                    <th>医生列表</th>
+                    <th>操作</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-repeat="item in message track by $index">
+                    <td>{{item.userName}}</td>
+                    <td>{{item.loginName}}</td>
+                    <td>{{item.kzTotal}}</td>
+                    <td>{{item.jjTotal}}</td>
+                    <td>{{item.managerBdTotal}}</td>
+                    <td>{{item.leaderName}}</td>
+                    <td><a class="find" href="javascript:void(0);" ng-click="checkList(item.id)">查 看</a></td>
+                    <td><a class="edit" href="javascript:void(0);" ng-click="editBD(item.id)">编 辑</a></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <!--分页-->
+        <div class="pagination" ng-controller="paginationHomeCtrl">
+            <p class="itemCount">每页显示
+                <select ng-model="selectValue"
+                        ng-options="item.pagesize for item in homeLists track by item.id" value="{{item.id}}"
+                        ng-change="getPagesize()">
+                </select>
+                条，共 <span>{{recordCount}}</span> 条记录，共 <span>{{pageCount}}</span>页
+            </p>
+            <div class="changePage" ng-hide="pageCount<=1">
+                <!--页码<=1时,不显示页码-->
+                <div class="pager" >
+                    <pager page-count="pageCount" current-page="currentPage" on-page-change="onPageChange()"
+                           first-text="首页" next-text="下一页" prev-text="上一页" last-text="尾页" show-goto="true" goto-text="跳转到"></pager>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--loading图片-->
+    <div class="loading-box" ng-hide="loading" >
+        <div class="sk-circle" >
+            <div class="sk-circle1 sk-child"></div>
+            <div class="sk-circle2 sk-child"></div>
+            <div class="sk-circle3 sk-child"></div>
+            <div class="sk-circle4 sk-child"></div>
+            <div class="sk-circle5 sk-child"></div>
+            <div class="sk-circle6 sk-child"></div>
+            <div class="sk-circle7 sk-child"></div>
+            <div class="sk-circle8 sk-child"></div>
+            <div class="sk-circle9 sk-child"></div>
+            <div class="sk-circle10 sk-child"></div>
+            <div class="sk-circle11 sk-child"></div>
+            <div class="sk-circle12 sk-child"></div>
+        </div>
+    </div>
+</div>
+
+
+
+

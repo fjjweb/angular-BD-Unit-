@@ -1,0 +1,147 @@
+<!--头部-->
+<header>
+    <div class="logo"></div>
+    <div class="menu" ng-controller="BackToLoginCtrl"  >
+        <span ng-model="loginPerson" style="color:#fff;">{{loginPerson}}管理员</span>
+        <a href="javascript:void(0);" title="退出"><i ng-click="BackToLogin()"></i></a>
+    </div>
+</header>
+
+<div class="allContainer">
+    <!--侧边栏-->
+    <div class="aside"></div>
+    <!--内容区-->
+    <div class="mainContainier">
+        <nav>
+            <div class="row">
+                <div class="col-md-3 col-lg-3">
+                    <div class="row">
+                        <button class=" btn btn-default listBack" ng-click="backOfList()">&lt;&nbsp;返回</button>
+                    </div>
+                </div>
+                <div class="col-md-8 col-lg-8 queryCondition">
+                    <div class="row">
+                        <form action="" class="form-inline ">
+                            <div class="control-group searchInfo ">
+                                <div class="begindate input-group date form_date" data-date=""
+                                     data-date-format="dd MM yyyy" data-link-field="dtp_input1"
+                                     data-link-format="yyyy-mm-dd">
+                                    <label for="dtp_input1" class="control-label">开始时间</label>
+                                    <input id="datetimeStart" class="form-control" type="text" value="" readonly
+                                           placeholder="点击选择" ng-model="startDate" ng-change="getStartime()" style="cursor:default">
+                                    <span class="input-group-addon glyphicon glyphicon-remove false"
+                                          ng-click="clearStartData()"></span>
+                                    <!--<span class="input-group-addon selectTimeIcon"><span class="glyphicon glyphicon-calendar "></span></span>  -->
+
+                                </div>
+                                <input type="hidden" id="dtp_input1" value=""/><br/>
+                            </div>
+
+                            <div class="control-group searchInfo">
+                                <div class="enddate input-group date form_date " data-date=""
+                                     data-date-format="dd MM yyyy"
+                                     data-link-field="dtp_input2" data-link-format="yyyy-mm-dd">
+                                    <label for="dtp_input2" class="control-label ">截止时间</label>
+                                    <input id="datetimeEnd" class="form-control" type="text" value="" ng-model="endDate"
+                                           ng-change="getEndtime()" readonly
+                                           placeholder="点击选择" style="cursor:default">
+                                    <span class="input-group-addon glyphicon glyphicon-remove false"
+                                          ng-click="clearEndData()"></span>
+                                    <!--<span class="input-group-addon selectTimeIcon"><span class="glyphicon glyphicon-calendar"></span></span>  -->
+                                </div>
+                                <input type="hidden" id="dtp_input2" value=""/><br/>
+                            </div>
+
+                            <div class=" searchInfo">
+                                <button ng-click='search()' id="querry" class="btn btn-default querryBtn">查询</button>
+                            </div>
+                            <div class=" searchInfo">
+                                <select ng-model="selectListValue"
+                                        ng-options="item.list for item in selectList track by item.id"
+                                        value="{{item.id}}" ng-change="getBillList()">
+                                </select>
+
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <div class="tableContext">
+            <table>
+                <thead>
+                <tr>
+                    <th>医生姓名</th>
+                    <th>登录名</th>
+                    <th>手机号</th>
+                    <th>总数（CT/MR/DX/CR）</th>
+                    <th>本月（CT/MR/DX/CR）</th>
+                    <th>推荐大病（总数/本月）</th>
+                    <th>推荐片子（总数/本月）</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-repeat="item in message track by $index">
+                    <td>{{item.trueName}}</td>
+                    <td>{{item.userName}}</td>
+                    <td>{{item.userName}}</td>
+                    <td>{{item.ct}}/{{item.mr}}/{{item.dx}}/{{item.cr}}</td>
+                    <td>{{item.curCT}}/{{item.curMR}}/{{item.curDX}}/{{item.curCR}}</td>
+                    <td>{{item.zjCount}}/{{item.curZjCount}}</td>
+                    <td>{{item.cgCount}}/{{item.curCgCount}}</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="pagination" ng-controller="doctorlistPageCtrlChange">
+            <p class="itemCount">每页显示
+                <select ng-model="selectValue"
+                        ng-options="item.pageSize for item in doctorLists track by item.id" value="{{item.id}}"
+                        ng-change="getPagesize()">
+                </select>
+                条，共 <span>{{recordCount}}</span> 条记录,共 <span>{{pageCount}}</span>页
+            </p>
+            <div class="changePage"  ng-hide="pageCount<=1">
+                <div class="pager" style="text-align: left">
+                    <pager page-count="pageCount" current-page="currentPage" on-page-change="onPageChange()"
+                           first-text="首页" next-text="下一页" prev-text="上一页" last-text="尾页" show-goto="true" goto-text="跳转到"></pager>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+
+    $(function () {
+        $("#datetimeStart").datetimepicker({
+            language: 'zh-CN',//语言选择中文
+            format: "yyyy-mm-dd",
+            autoclose: true,
+            weekStart: 0,//一周从哪天开始，0表示周日开始
+            todayBtn: 1,
+            autoclose: 1,
+            todayHighlight: 1,
+            startView: 2,//默认显示月
+            minView: 2,
+            forceParse: 1,
+            pickerPosition: "bottom-left"
+        }).on("click",function(ev){
+            $("#datetimeStart").datetimepicker("setEndDate", $("#datetimeEnd").val());
+        });
+        $("#datetimeEnd").datetimepicker({
+            language: 'zh-CN',
+            format: "yyyy-mm-dd",
+            autoclose: true,
+            weekStart: 0,//一周从哪天开始，0表示周日开始
+            todayBtn: 1,
+            autoclose: 1,
+            todayHighlight: 1,
+            startView: 2,//默认显示月
+            minView: 2,
+            forceParse: 1,
+            pickerPosition: "bottom-left"
+        }).on("click", function (ev) {
+            $("#datetimeEnd").datetimepicker("setStartDate", $("#datetimeStart").val());
+        });
+    });
+</script>

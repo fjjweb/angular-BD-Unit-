@@ -1,0 +1,887 @@
+/*common.css*/
+html {
+    width: 100%;
+    height: 100%;
+}
+
+html body {
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+}
+
+.disable {
+    cursor: unset !important;
+}
+
+.viewport {
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+}
+
+/*登录页面*/
+body {
+    background-color: #8E8E8E;
+}
+
+.loginContainer {
+    width: 25%;
+    margin: 50px auto;
+    background-color: #EEE;
+}
+
+.loginContainer form {
+    padding-bottom: 50px;
+}
+
+.loginContainer .form-group {
+    padding: 0 120px;
+}
+
+.loginContainer form .username {
+    /*border-radius: 2px;*/
+    padding-left: 40px;
+    background: url(../image/usename.png) no-repeat 6px;
+    background-color: #fff;
+}
+
+.loginContainer form .pwd {
+    /*border-radius: 2px;*/
+    padding-left: 40px;
+    background: url(../image/password.png) no-repeat 6px;
+    background-color: #fff;
+}
+
+.loginContainer .login-head {
+    background-color: #EAEAEA;
+    display: block;
+    height: 100px;
+    /*line-height: 100px;*/
+    text-align: center;
+    font: 700 22px/100px "宋体";
+    color: #1A1A1A;
+    margin-bottom: 30px;
+}
+
+.loginContainer .errorMsg {
+    text-align: center;
+    color: red;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.loginContainer .loginBtn {
+    background-color: #036298;
+    color: #fff;
+}
+
+header {
+    width: 100%;
+    height: 80px;
+    background-color: #323232;
+}
+
+header .logo {
+    float: left;
+    width: 200px;
+    height: 49px;
+    background: url("../image/logo.png");
+    position: absolute;
+    top: 10px;
+}
+
+header .menu {
+    float: right;
+    width: 30%;
+    position: relative;
+    height: 80px;
+    line-height: 80px;
+}
+
+header .menu span {
+    width: 50%;
+    position: absolute;
+    font-size: 20px;
+    top: 0px;
+    right: 40px;
+    text-align: center;
+}
+
+header .menu i {
+    position: absolute;
+    width: 64px;
+    height: 55px;
+    top: 12px;
+    right: 15px;
+    background: url(../image/menu.png);
+}
+
+/*header .menu .backToLogin {*/
+    /*display: none;*/
+    /*width: 120px;*/
+    /*height: 50px;*/
+    /*border: 1px solid red;*/
+    /*position: absolute;*/
+    /*top: 50px;*/
+    /*right: 10px;*/
+    /*line-height: 30px;*/
+    /*text-align: center;*/
+/*}*/
+
+.allContainer {
+    width: 100%;
+    height: 100%;
+    background-color: #e5e6e9;
+    display: -webkit-box;
+    /* OLD - iOS 6-, Safari 3.1-6 */
+    display: -moz-box;
+    /* OLD - Firefox 19- (buggy but mostly works) */
+    display: -ms-flexbox;
+    /* TWEENER - IE 10 */
+    display: -webkit-flex;
+    /* NEW - Chrome */
+    display: flex;
+    /* NEW, Spec - Opera 12.1, Firefox 20+ */
+}
+
+.allContainer .aside {
+    width: 50px;
+    min-height: 898px;
+    /*height: 100%;*/
+    /*overflow:hidden;*/
+    background-color: #313131;
+    float: left;
+}
+
+.allContainer .mainContainier {
+    float: right;
+    -webkit-box-flex: 1;
+    /* OLD - iOS 6-, Safari 3.1-6 */
+    -moz-box-flex: 1;
+    /* OLD - Firefox 19- */
+    width: 20%;
+    /* For old syntax, otherwise collapses. */
+    -webkit-flex: 1;
+    /* Chrome */
+    -ms-flex: 1;
+    /* IE 10 */
+    flex: 1;
+    /* NEW, Spec - Opera 12.1, Firefox 20+ */
+    height: 100%;
+}
+
+.changePage .active {
+    background: pink;
+}
+
+.allContainer .mainContainier label {
+    padding-right: 0;
+    padding-left: 0;
+    text-align: center;
+    font-weight: 400;
+}
+
+.allContainer .mainContainier nav {
+    width: 100%;
+    height: 60px;
+    padding-left: 50px;
+    line-height: 60px;
+    position: relative;
+    font-size: 16px;
+}
+
+.allContainer .mainContainier nav .wapSearch {
+    position: absolute;
+    top: 0px;
+    left: 30%;
+}
+
+.allContainer .mainContainier nav .addBtn {
+    width: 120px;
+    height: 40px;
+    line-height: 40px;
+    margin-right: 10px;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -khtml-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    color: #fff;
+    letter-spacing: 2px;
+}
+
+.allContainer .mainContainier nav .addBtn1 {
+    background-color: #036197;
+}
+
+.allContainer .mainContainier nav .addBtn2 {
+    background-color: #11B9DD;
+}
+
+.allContainer .mainContainier nav .listBack {
+    width: 100px;
+    height: 40px;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+.allContainer .mainContainier nav .begindate {
+    float: left;
+    margin-right: 20px;
+}
+
+.allContainer .mainContainier nav .enddate {
+    float: left;
+    margin-right: 20px;
+}
+
+.allContainer .mainContainier nav input {
+    width: 140px;
+    height: 36px;
+    border: 1px solid #D8D8DA;
+    font-size: 16px;
+    line-height: 36px;
+    padding-left: 10px;
+    margin-left: 10px;
+    border-radius: 5px !important;
+}
+
+.allContainer .mainContainier nav .querryBtn {
+    float: left;
+    width: 100px;
+    height: 36px;
+    margin: 13px 20px 0 0;
+    background-color: #11B9DD;
+}
+
+.allContainer .mainContainier nav select {
+    font-size: 16px;
+    width: 200px;
+    height: 36px;
+    border: 1px solid #D8D8DA;
+    padding-left: 10px;
+}
+
+.allContainer .mainContainier nav select option {
+    display: block;
+    width: 200px;
+    height: 40px;
+    color: #11B9DD;
+}
+
+.allContainer .mainContainier nav form .searchInfo {
+    display: inline-block;
+    float: left;
+}
+
+.allContainer .mainContainier .tableContext {
+    width: 100%;
+    height: 100%;
+}
+
+.allContainer .mainContainier .tableContext table {
+    width: 95%;
+    height: 100%;
+    background-color: #fff;
+    border: 1px solid #D8D8DA;
+    margin: 0 20px 20px 45px;
+    box-sizing: border-box;
+    font: 16px "微软雅黑";
+}
+
+.allContainer .mainContainier .tableContext table tr {
+    width: 100%;
+    height: 50px;
+    min-height: 50px;
+    padding: 3px 0;
+}
+
+.allContainer .mainContainier .tableContext table th {
+    width: 11%;
+    height: 50px;
+    min-height: 50px;
+    border-bottom: 1px solid #D8D8DA;
+    text-align: center;
+}
+
+.allContainer .mainContainier .tableContext table td {
+    width: 11%;
+    height: 50px;
+    min-height: 50px;
+    border-bottom: 1px solid #D8D8DA;
+    text-align: center;
+    position: relative;
+}
+
+.allContainer .mainContainier .tableContext table td a {
+    display: block;
+    width: 80px;
+    height: 32px;
+    line-height: 32px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -16px 0 0 -40px;
+    text-align: center;
+    color: #fff;
+    border-radius: 5px;
+}
+
+.allContainer .mainContainier .tableContext table td .find {
+    background-color: #7BD0E3;
+}
+
+.allContainer .mainContainier .tableContext table td .edit {
+    background-color: #036197;
+}
+
+.allContainer .mainContainier .pagination {
+    width: 100%;
+    height: 35px;
+    position: relative;
+    background-color: #E5E6E9;
+}
+
+.allContainer .mainContainier .pagination .itemCount {
+    position: absolute;
+    top: 0px;
+    margin-left: 50px;
+}
+
+.allContainer .mainContainier .pagination .changePage {
+    width: 600px;
+    height: 35px;
+    position: absolute;
+    top: -25px;
+    left: 35%;
+}
+
+.allContainer .mainContainier .pagination .changePage li {
+    float: left;
+    margin-right: 10px;
+}
+
+.allContainer .mainContainier .pagination .changePage .arrow {
+    display: block;
+    width: 12px;
+    height: 14px;
+    margin-top: 3px;
+}
+
+.allContainer .mainContainier .pagination .changePage .arrow:hover {
+    cursor: default;
+}
+
+.allContainer .mainContainier .pagination .changePage #page_num_all li {
+    text-align: center;
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    font-size: 16px;
+}
+
+.allContainer .mainContainier .pagination .changePage #page_num_all li:hover {
+    cursor: pointer;
+}
+
+.allContainer .mainContainier .pagination .changePage #page_num_all .current {
+    color: #7BD0E3;
+}
+
+.pager {
+    text-align: left;
+}
+
+/*edit.css*/
+.mainContainier {
+    font-size: 16px
+}
+
+.mainContainier .btnBack {
+    width: 300px;
+    height: 60px;
+    padding-left: 50px;
+    line-height: 60px
+}
+
+.mainContainier .btnBack .btn {
+    width: 100px;
+    height: 40px
+}
+
+.mainContainier .columnDiv {
+    background-color: #fff
+}
+
+.mainContainier .formDiv {
+    position: relative;
+    width: 52%;
+    margin-left: 50px;
+    /*padding-top: 60px;*/
+    background-color: #fff
+}
+
+.mainContainier .formDiv input[type=text], .mainContainier .formDiv input[type=password] {
+    width: 300px;
+    height: 40px
+}
+
+.mainContainier .formDiv .form-group {
+    margin-bottom: 25px
+}
+
+.mainContainier .formDiv .control-label {
+    height: 40px;
+    line-height: 40px;
+    padding-top: 0;
+}
+
+.mainContainier .formDiv .radio-inline {
+    padding-top: 10px;
+    margin-left: 20px;
+}
+
+.mainContainier .formDiv .selectBD {
+    width: 330px;
+    height: 40px
+}
+
+.mainContainier .formDiv button.btn {
+    width: 120px;
+    height: 40px;
+    letter-spacing: 2px;
+    font-size: 16px;
+    margin-left: 35%;
+    margin-bottom: 60px
+}
+
+.mainContainier .formDiv .nametipmsg {
+    display: inline-block;
+    float: right;
+    margin-top: -40px;
+    margin-right: -440px;
+    height: 40px;
+    line-height: 40px;
+    padding: 0 5px;
+    border-radius: 5px;
+    color: #c23e29;
+}
+
+.mainContainier .formDiv .requiredTip {
+    margin-right: 170px !important;
+}
+
+.mainContainier .formDiv .telTip {
+    margin-left: 45px;
+}
+
+.mainContainier .formDiv .loginTip {
+    margin-right: 56px;
+}
+
+.mainContainier .formDiv .success {
+    display: inline-block;
+    float: right;
+    margin-top: -30px;
+    margin-right: -225px;
+    width: 40px;
+    height: 40px;
+    background: url(../image/ok.png) no-repeat;
+    background-size: 20px 20px;
+}
+
+.mainContainier .formDiv .pwdTip {
+    display: inline-block;
+    float: right;
+    margin-right: -380px;
+    height: 40px;
+    padding: 0 5px;
+    border-radius: 5px;
+    color: #c23e29;
+}
+
+.mainContainier .formDiv .pwdOk {
+    display: inline-block;
+    float: right;
+    margin-top: 10px;
+    margin-right: -50px;
+    width: 40px;
+    height: 40px;
+    background: url(../image/ok.png) no-repeat;
+    background-size: 20px 20px;
+}
+
+.mainContainier .formDiv .submitTip {
+    color: #22B14C;
+    text-align: center;
+    width: 165px;
+    height: 80px;
+    line-height: 40px;
+    display: block;
+    margin-left: 345px;
+    float: left;
+    margin-bottom: -60px;
+}
+
+/*doctorList.css*/
+.mainContainier nav {
+    padding-right: 60px;
+    font-size: 16px;
+}
+
+.mainContainier nav button {
+    float: left;
+    margin-top: 13px;
+}
+
+.mainContainier nav .btn {
+    width: 80px;
+}
+
+.mainContainier nav .begindate {
+    float: left;
+}
+
+.mainContainier nav .enddate {
+    float: left;
+}
+
+.mainContainier nav .false {
+    padding-right: 25px;
+    padding-top: 10px;
+    border-right: 0;
+}
+
+.mainContainier nav .selectTimeIcon {
+    padding-top: 8px !important;
+}
+
+.mainContainier nav input {
+    width: 160px;
+    height: 40px;
+    border: 1px solid #E5E5E9;
+}
+
+.mainContainier nav .querryBtn {
+    float: left;
+}
+
+/*billDetails.css*/
+.mainContainier {
+    padding: 0 50px 50px 50px
+}
+
+.mainContainier .btnBack {
+    width: 100%;
+    height: 80px;
+    position: relative
+}
+
+.mainContainier .btnBack .btn {
+    position: absolute;
+    top: 20px;
+    left: 33px;
+}
+
+.mainContainier .btnBack .detailsBack {
+    left: 0px;
+}
+
+.mainContainier .billDetails {
+    width: 100%;
+    height: 100%;
+    overflow: hidden
+}
+
+.mainContainier .billDetails .billLeft {
+    float: left;
+    width: 40%;
+    height: 100%;
+    margin-right: 15px
+}
+
+.mainContainier .billDetails .billLeft .left_up {
+    padding: 50px 0 50px 70px;
+    background-color: #fff
+}
+
+.mainContainier .billDetails .billLeft .left_up ul li {
+    height: 70px;
+    line-height: 70px;
+    font-size: 20px
+}
+
+.mainContainier .billDetails .billLeft .left_up ul .title {
+    font: 700 20px "微软雅黑 serif sans-serif ";
+    margin-right: 20px
+}
+
+.mainContainier .billDetails .billLeft .left_down {
+    background-color: #fff;
+    padding-bottom: 140px;
+    text-align: center
+}
+
+.mainContainier .billDetails .billLeft .left_down tr {
+    height: 90px;
+    font-size: 20px;
+    border: none
+}
+
+.mainContainier .billDetails .billLeft .left_down tr:first-child {
+    background-color: #F4F5F7
+}
+
+.mainContainier .billDetails .billLeft .left_down th {
+    text-align: center;
+    border: none;
+    line-height: 90px
+}
+
+.mainContainier .billDetails .billLeft .left_down td {
+    border: none
+}
+
+.mainContainier .billDetails .billright {
+    float: right;
+    width: 55%;
+    height: 100%
+}
+
+.mainContainier .billDetails .billright .right_up {
+    width: 100%;
+    height: 100%;
+    background-color: #fff
+}
+
+.mainContainier .billDetails .billright .right_up .title {
+    width: 100%;
+    height: 60px
+}
+
+.mainContainier .billDetails .billright .right_up .title h2 {
+    font: 700 18px/60px "微软雅黑";
+    padding-left: 30px
+}
+
+.mainContainier .billDetails .billright .right_up .pieParent {
+    width: 100%;
+    height: 100%;
+    position: relative
+}
+
+.mainContainier .billDetails .billright .right_up .pieParent .pieList {
+    position: absolute;
+    top: 0;
+    right: 20px
+}
+
+.mainContainier .billDetails .billright .right_up .pieParent .pieList li {
+    height: 15px;
+    line-height: 15px;
+    margin-bottom: 3px
+}
+
+.mainContainier .billDetails .billright .right_up .pieParent .pieList li .icon {
+    width: 15px;
+    height: 15px;
+    display: inline-block;
+    margin-right: 5px
+}
+
+.mainContainier .billDetails .billright .right_up .pieParent .pieList li .icon1 {
+    background-color: #036298
+}
+
+.mainContainier .billDetails .billright .right_up .pieParent .pieList li .icon2 {
+    background-color: #0e95db
+}
+
+.mainContainier .billDetails .billright .right_up .pieParent .pieList li .icon3 {
+    background-color: #12c494
+}
+
+.mainContainier .billDetails .billright .right_up .pieParent .pieList li .icon4 {
+    background-color: #ffa200
+}
+
+.mainContainier .billDetails .billright .right_up .pieParent .pieList li .icon5 {
+    background-color: #e03c14
+}
+
+.mainContainier .billDetails .billright .right_up .pieParent .pieList li .icon6 {
+    background-color: #9570cd
+}
+
+.mainContainier .billDetails .billright .right_up .pieParent .pieList li span {
+    height: 15px;
+    line-height: 15px;
+    display: inline-block
+}
+
+.mainContainier .billDetails .billright .right_up .pieParent .pieChart {
+    width: 80%;
+    float: left;
+    position: relative;
+    overflow: hidden;
+    padding: 50px 0
+}
+
+.mainContainier .billDetails .billright .right_up .pieParent .pieChart #pie {
+    float: left;
+    right: 50%;
+    width: 300px;
+    height: 300px
+}
+
+.mainContainier .billDetails .billright .right_down {
+    margin-top: 25px;
+    width: 100%;
+    height: 100%;
+    background-color: #fff
+}
+
+.mainContainier .billDetails .billright .right_down .title {
+    width: 100%;
+    height: 60px
+}
+
+.mainContainier .billDetails .billright .right_down .title h2 {
+    font: 700 18px/60px "微软雅黑";
+    padding-left: 30px
+}
+
+.mainContainier .billDetails .billright .right_down .barParent {
+    width: 100%;
+    height: 100%;
+    position: relative
+}
+
+.mainContainier .billDetails .billright .right_down .barParent .barList {
+    position: absolute;
+    top: 0;
+    right: 20px
+}
+
+.mainContainier .billDetails .billright .right_down .barParent .barList li {
+    height: 15px;
+    line-height: 15px;
+    margin-bottom: 3px
+}
+
+.mainContainier .billDetails .billright .right_down .barParent .barList li .icon {
+    width: 15px;
+    height: 15px;
+    display: inline-block;
+    margin-right: 5px
+}
+
+.mainContainier .billDetails .billright .right_down .barParent .barList li .icon1 {
+    background-color: #036298
+}
+
+.mainContainier .billDetails .billright .right_down .barParent .barList li .icon2 {
+    background-color: #0e95db
+}
+
+.mainContainier .billDetails .billright .right_down .barParent .barList li .icon3 {
+    background-color: #12c494
+}
+
+.mainContainier .billDetails .billright .right_down .barParent .barList li .icon4 {
+    background-color: #ffa200
+}
+
+.mainContainier .billDetails .billright .right_down .barParent .barList li .icon5 {
+    background-color: #e03c14
+}
+
+.mainContainier .billDetails .billright .right_down .barParent .barList li .icon6 {
+    background-color: #9570cd
+}
+
+.mainContainier .billDetails .billright .right_down .barParent .barList li span {
+    height: 15px;
+    line-height: 15px;
+    display: inline-block
+}
+
+.mainContainier .billDetails .billright .right_down .barParent .barChart {
+    width: 80%;
+    float: left;
+    position: relative;
+    overflow: hidden;
+    padding: 50px 0
+}
+
+.mainContainier .billDetails .billright .right_down .barParent .barChart #bar {
+    float: left;
+    right: 50%;
+    width: 300px;
+    height: 300px
+}
+
+/*屏幕适配*/
+@media only screen and (width: 1600px ) {
+    .mainContainier .billDetails .billLeft .left_down {
+        background-color: #fff;
+        padding-bottom: 0px;
+        text-align: center
+    }
+
+    .mainContainier .formDiv input[type=text], .mainContainier .formDiv input[type=password] {
+        width: 280px;
+    }
+
+    .mainContainier .formDiv select {
+        width: 280px;
+    }
+
+    .mainContainier .formDiv .pwdTip {
+        margin-right: -410px;
+    }
+
+    .mainContainier .queryCondition {
+        margin-left: -150px;
+        width: 80%;
+    }
+
+    .mainContainier .formDiv .pwdOk {
+        margin-right: -70px;
+    }
+
+}
+
+/*1440*900*/
+@media only screen and (width: 1440px) {
+    .mainContainier .formDiv input[type=text], .mainContainier .formDiv input[type=password] {
+        width: 216px;
+    }
+
+    .mainContainier .formDiv .nametipmsg {
+        margin-right: -390px;
+    }
+
+    .mainContainier .formDiv .success {
+        margin-right: -190px;
+    }
+
+    .mainContainier .queryCondition {
+        margin-left: -150px;
+        width: 80%;
+    }
+
+    .allContainer .mainContainier nav select {
+        width: 170px;
+    }
+
+    .mainContainier .billDetails .billLeft .left_down tr {
+        height: 55px;
+    }
+}
+
+/*1400*1050*/
+@media only screen and (width: 1400px ) {
+}
+
+

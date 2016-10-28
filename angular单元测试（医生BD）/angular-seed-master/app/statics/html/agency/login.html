@@ -1,0 +1,34 @@
+
+<header>
+    <div class="logo"></div>
+    <div class="menu"  >
+        <h1>慧影-BD</h1>
+    </div>
+</header>
+
+
+<div class="loginContainer ">
+    <form for="loginForm" class="form-horizontal" role="form">
+        <h2 class="login-head">医生BD平台</h2>
+        <p class="errorMsg" ng-model="errorMessage">{{errorMessage}}</p>
+        <div class="form-group ">
+            <input  type="text" class="form-control username"  name="loginName" id="loginName" placeholder="请输入用户名"
+                    ng-model="loginName">
+        </div>
+        <div class="form-group">
+            <input type="password"  class="form-control pwd" name="loginPwd" id="loginPwd" placeholder="请输入密码"
+                   ng-model="loginPwd"/>
+        </div>
+        <div class="form-group">
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox" ng-model="isRemebered" id="isRemeberedId"> 记住密码
+                </label>
+            </div>
+        </div>
+        <div class="form-group">
+            <button type="submit" class="form-control loginBtn"  ng-click="submitLoginData()">登&nbsp;录</button>
+        </div>
+    </form>
+</div>
+

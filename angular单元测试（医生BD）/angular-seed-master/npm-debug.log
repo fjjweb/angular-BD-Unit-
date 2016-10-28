@@ -1,0 +1,43 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'C:\\Program Files\\nodejs\\node.exe',
+1 verbose cli   'C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js',
+1 verbose cli   'test' ]
+2 info using npm@3.10.8
+3 info using node@v6.9.1
+4 verbose run-script [ 'pretest', 'test', 'posttest' ]
+5 info lifecycle angular-seed@0.0.0~pretest: angular-seed@0.0.0
+6 verbose lifecycle angular-seed@0.0.0~pretest: unsafe-perm in lifecycle true
+7 verbose lifecycle angular-seed@0.0.0~pretest: PATH: C:\Program Files\nodejs\node_modules\npm\bin\node-gyp-bin;C:\Users\Administrator.TOPRAYPC-002\Desktop\angular\angular-seed-master\node_modules\.bin;C:\Ruby23-x64\bin;C:\ProgramData\Oracle\Java\javapath;C:\Program Files (x86)\Embarcadero\Studio\14.0\bin;C:\Users\Public\Documents\Embarcadero\Studio\14.0\Bpl;C:\Program Files (x86)\Embarcadero\Studio\14.0\bin64;C:\Users\Public\Documents\Embarcadero\Studio\14.0\Bpl\Win64;C:\Program Files (x86)\Embarcadero\RAD Studio\9.0\bin;C:\Users\Public\Documents\RAD Studio\9.0\Bpl;C:\Program Files (x86)\Embarcadero\RAD Studio\9.0\bin64;C:\Users\Public\Documents\RAD Studio\9.0\Bpl\Win64;C:\Windows\system32;D:\Java\jdk1.8.0_91\bin;D:\mysql-5.6.23-winx64\bin;C:\Program Files (x86)\Skype\Phone\;C:\Windows;C:\Windows\system32\wbem;C:\Program Files (x86)\Common Files\TTKN\Bin;C:\Program Files\TortoiseSVN\bin;C:\Program Files\VisualSVN Server\bin;C:\Program Files\Git\cmd;C:\Program Files\nodejs\;C:\Users\Administrator.TOPRAYPC-002\AppData\Roaming\npm
+8 verbose lifecycle angular-seed@0.0.0~pretest: CWD: C:\Users\Administrator.TOPRAYPC-002\Desktop\angular\angular-seed-master
+9 silly lifecycle angular-seed@0.0.0~pretest: Args: [ '/d /s /c', 'npm install' ]
+10 silly lifecycle angular-seed@0.0.0~pretest: Returned: code: 0  signal: null
+11 info lifecycle angular-seed@0.0.0~test: angular-seed@0.0.0
+12 verbose lifecycle angular-seed@0.0.0~test: unsafe-perm in lifecycle true
+13 verbose lifecycle angular-seed@0.0.0~test: PATH: C:\Program Files\nodejs\node_modules\npm\bin\node-gyp-bin;C:\Users\Administrator.TOPRAYPC-002\Desktop\angular\angular-seed-master\node_modules\.bin;C:\Ruby23-x64\bin;C:\ProgramData\Oracle\Java\javapath;C:\Program Files (x86)\Embarcadero\Studio\14.0\bin;C:\Users\Public\Documents\Embarcadero\Studio\14.0\Bpl;C:\Program Files (x86)\Embarcadero\Studio\14.0\bin64;C:\Users\Public\Documents\Embarcadero\Studio\14.0\Bpl\Win64;C:\Program Files (x86)\Embarcadero\RAD Studio\9.0\bin;C:\Users\Public\Documents\RAD Studio\9.0\Bpl;C:\Program Files (x86)\Embarcadero\RAD Studio\9.0\bin64;C:\Users\Public\Documents\RAD Studio\9.0\Bpl\Win64;C:\Windows\system32;D:\Java\jdk1.8.0_91\bin;D:\mysql-5.6.23-winx64\bin;C:\Program Files (x86)\Skype\Phone\;C:\Windows;C:\Windows\system32\wbem;C:\Program Files (x86)\Common Files\TTKN\Bin;C:\Program Files\TortoiseSVN\bin;C:\Program Files\VisualSVN Server\bin;C:\Program Files\Git\cmd;C:\Program Files\nodejs\;C:\Users\Administrator.TOPRAYPC-002\AppData\Roaming\npm
+14 verbose lifecycle angular-seed@0.0.0~test: CWD: C:\Users\Administrator.TOPRAYPC-002\Desktop\angular\angular-seed-master
+15 silly lifecycle angular-seed@0.0.0~test: Args: [ '/d /s /c', 'karma start karma.conf.js' ]
+16 silly lifecycle angular-seed@0.0.0~test: Returned: code: 3221225786  signal: null
+17 info lifecycle angular-seed@0.0.0~test: Failed to exec test script
+18 error Test failed.  See above for more details.
+19 verbose exit [ 1, true ]
+20 verbose stack Error: kill ENOSYS
+20 verbose stack     at exports._errnoException (util.js:1026:11)
+20 verbose stack     at process.kill (internal/process.js:172:13)
+20 verbose stack     at process.listener (C:\Program Files\nodejs\node_modules\npm\node_modules\npmlog\node_modules\gauge\node_modules\signal-exit\index.js:86:15)
+20 verbose stack     at emitNone (events.js:91:20)
+20 verbose stack     at process.emit (events.js:185:7)
+20 verbose stack     at processEmit (C:\Program Files\nodejs\node_modules\npm\node_modules\npmlog\node_modules\gauge\node_modules\signal-exit\index.js:146:32)
+20 verbose stack     at processEmit (C:\Program Files\nodejs\node_modules\npm\node_modules\npm-registry-client\node_modules\npmlog\node_modules\gauge\node_modules\signal-exit\index.js:146:32)
+20 verbose stack     at Signal.wrap.onsignal (internal/process.js:199:44)
+21 verbose cwd C:\Users\Administrator.TOPRAYPC-002\Desktop\angular\angular-seed-master
+22 error Windows_NT 6.3.9600
+23 error argv "C:\\Program Files\\nodejs\\node.exe" "C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "test"
+24 error node v6.9.1
+25 error npm  v3.10.8
+26 error code ENOSYS
+27 error errno ENOSYS
+28 error syscall kill
+29 error kill ENOSYS
+30 error If you need help, you may report this error at:
+30 error     <https://github.com/npm/npm/issues>
+31 verbose exit [ 1, true ]

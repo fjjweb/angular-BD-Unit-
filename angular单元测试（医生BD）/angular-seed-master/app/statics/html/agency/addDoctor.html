@@ -1,0 +1,91 @@
+<!--内容区域-->
+<div class="allContainer">
+    <!--侧边栏-->
+    <div class="aside">
+
+    </div>
+    <!--内容区-->
+    <div class="mainContainier">
+        <div class="btnBack" style="padding:20px 0  0 50px;">
+            <button type="button" class="btn btn-default" ng-click="backDoctor()" >&lt;返回</button>
+        </div>
+        <div class="container-fluid ">
+            <div class="row">
+                <div class="col-lg-6 col-md-6" style="background-color: #fff; margin:20px 0 0 50px; padding: 60px 0px;">
+                    <form class="form-horizontal formDiv" name="addDoctorForm">
+                        <!--姓名校验-->
+                        <div class="form-group">
+                            <label for="username" class="col-lg-4 col-md-4 control-label">姓名：</label>
+                            <div class="col-lg-4 col-md-4">
+                                <input type="text" class="form-control" id="username" name="username" ng-model="user.name" ng-blur="getName()" placeholder="请输入姓名"
+                                       ng-minlength="1"  ng-maxlength="16"  required >
+                                <span class="glyphicon glyphicon-ok form-control-feedback"
+                                      ng-show="addDoctorForm.username.$dirty && addDoctorForm.username.$invalid">请输入不超过16个字符的姓名</span>
+
+                            </div>
+                        </div>
+                        <!--性别选择-->
+                        <div class="form-group">
+                            <label class="col-lg-4 col-md-4 control-label">性别：</label>
+                            <div class="col-lg-4 col-md-4">
+                                <label class="radio-inline">
+                                    <input type="radio" name="gender" id="male" value="0" ng-model="user.gender" ng-checked="true"> 男
+                                </label>
+                                <label class="radio-inline">
+                                    <input type="radio" name="gender" id="female" value="1" ng-model="user.gender"> 女
+                                </label>
+
+                            </div>
+                        </div>
+                        <!--所在医院-->
+                        <div class="form-group ">
+                            <label  class="col-lg-4 col-md-4 control-label">所在医院：</label>
+                            <div class="col-lg-4 col-md-4">
+                                <input type="text" class="form-control" ng-model="user.hospital" ng-blur="getHospital()" ng-maxlength="30"/>
+                            </div>
+                        </div>
+                        <!--所在科室-->
+                        <div class="form-group ">
+                            <label  class="col-lg-4 col-md-4 control-label">所在科室：</label>
+                            <div class="col-lg-4 col-md-4">
+                                <input type="text" class="form-control" ng-model="user.office" ng-blur="getOffice()" ng-maxlength="30" />
+                            </div>
+                        </div>
+                        <!--手机号选择-->
+                        <div class="form-group ">
+                            <label for="telphone" class="col-lg-4 col-md-4 control-label" >手机号：</label>
+                            <div class="col-lg-4 col-md-4">
+                                <input  class="form-control" type="text" id="telphone" name="telphone" ng-model="user.telphone"
+                                        ng-pattern="/^1\d{10}$/" ng-blur="getTelphone()" required />
+                                <span ng-show="addDoctorForm.telphone.$dirty &&addDoctorForm.telphone.$invalid">请输入以1开头的有效的11位手机号（必填项）</span>
+                            </div>
+                        </div>
+                       <!--擅长领域-->
+                        <div class="form-group ">
+                            <label  class="col-lg-4 col-md-4 control-label">擅长领域：</label>
+                            <div class="col-lg-8 col-md-8">
+                                <textarea name="" id="" cols="30" rows="5" class="form-control" ng-model="user.speciallization" ng-blur="getSpecialArea()" >
+                                </textarea>
+                            </div>
+                        </div>
+
+                        <!--医生BD-->
+                        <div class="form-group">
+                            <label  class="col-lg-4 col-md-4 control-label">医生BD：</label>
+                            <!--<div class="col-lg-4 col-md-4 selectBD">-->
+                            <div class="col-lg-8 col-md-8">
+                                <select  class="form-control" ng-model="selectDoctorBD.BD"
+                                         ng-options="item.BD for item in doctorBDs track by item.id"  value="{{item.id}}" ng-change="getDoctorBD()" >
+                                </select>
+                            </div>
+                        </div>
+                        <!--保存按钮-->
+                        <button  ng-click="requestAddDoctorData()" type="submit" class="btn btn-default btn-primary" style="margin-left:40%">保存</button>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</div>

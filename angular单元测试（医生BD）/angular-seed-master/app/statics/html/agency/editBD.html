@@ -1,0 +1,170 @@
+<!--头部-->
+<header>
+    <div class="logo"></div>
+    <div class="menu" ng-controller="BackToLoginCtrl"  >
+        <span ng-model="loginPerson" style="color:#fff;">{{loginPerson}}管理员</span>
+        <a href="javascript:void(0);" title="退出"><i ng-click="BackToLogin()"></i></a>
+    </div>
+</header>
+
+<!--内容区域-->
+<div class="allContainer">
+    <!--侧边栏-->
+    <div class="aside">
+
+    </div>
+    <!--内容区-->
+    <div class="mainContainier">
+        <div class="btnBack" style="padding:20px 0  0 50px;">
+            <button type="button" class="btn btn-default" ng-click="backDoctorBD()" style="width:100px;height:40px;">
+                &lt;返回
+            </button>
+        </div>
+
+        <div class="container-fluid ">
+            <div class="row">
+                <div class="col-lg-6 col-md-6" style="background-color: #fff; margin:20px 0 0 50px; padding: 60px 0px;">
+                    <form class="form-horizontal formDiv" name="editBDForm" novalidate="novalidate">
+                        <!--姓名校验-->
+                        <div class="form-group">
+
+                            <label for="username" class="col-lg-4 col-md-4 control-label">姓名：</label>
+                            <div class="col-lg-4 col-md-4">
+                                <input type="text" class="form-control" id="username" name="username"
+                                       ng-model="user.name"
+                                       ng-blur="getName()" placeholder="请输入姓名..."
+                                       required ng-minlength="1" ng-maxlength="30">
+
+                                <div class="alert  nametipmsg success " ng-show="editBDForm.username.$dirty&&
+                                    editBDForm.username.$valid"></div>
+
+                                <div class="nametipmsg error" ng-show="editBDForm.username.$dirty ">
+                                    <span class="error requiredTip "
+                                          ng-show="editBDForm.username.$error.required">请输入姓名</span>
+                                    <span class="error maxLen" ng-show="editBDForm.username.$error.maxlength">您输入的字符长度不能超过30个字符</span>
+                                </div>
+
+                            </div>
+                        </div>
+                        <!--性别选择-->
+                        <div class="form-group">
+                            <label class="col-lg-4 col-md-4 control-label">性别：</label>
+                            <div class="col-lg-4 col-md-4">
+                                <label class="radio-inline">
+                                    <input type="radio" name="gender" id="male" value="0" ng-model="user.gender"
+                                           ng-checked="true"> 男
+                                </label>
+                                <label class="radio-inline">
+                                    <input type="radio" name="gender" id="female" value="1" ng-model="user.gender"> 女
+                                </label>
+
+                            </div>
+                        </div>
+                        <!--手机号选择-->
+                        <div class="form-group ">
+                            <label for="telphone" class="col-lg-4 col-md-4 control-label">手机号：</label>
+                            <div class="col-lg-4 col-md-4">
+                                <input class="form-control" type="text" id="telphone"  placeholder="请输入手机号..."  ng-model="user.telphone" name="telphone"
+                                       ng-pattern="/^1[3|5|7|8]{1}[0-9]{9}$/ "
+                                       ng-blur="getTelphone()"
+                                       required
+                                       ng-minlength="11"
+                                       ng-maxlength="11"/>
+                                <div class="nametipmsg error" ng-show="editBDForm.telphone.$dirty ">
+                                    <span class="error  telTip"
+                                          ng-hide="getTelphone()">
+                                    请输入有效的手机号；不能包含空格
+                                    </span>
+                                </div>
+                                <div class="alert  nametipmsg success " ng-show="editBDForm.telphone.$dirty&&
+                                    getTelphone()"></div>
+                            </div>
+                        </div>
+
+                        <!--登录用户名校验-->
+                        <div class="form-group">
+                            <label for="loginName" class="col-lg-4 col-md-4 control-label">登陆用户名：</label>
+                            <div class="col-lg-4 col-md-4">
+                                <input type="text" class="form-control" name="loginName" id="loginName"
+                                       placeholder="请输入登录名.."
+                                       ng-pattern="/^[_A-Za-z0-9]+$\w{0,16}/"
+
+                                       ng-model="user.loginName" ng-blur="getLoginName()"
+                                       ng-maxlength="16"
+                                       ng-minlength="0"
+                                >
+
+                                <div class="nametipmsg error" ng-show="editBDForm.loginName.$dirty ">
+                                    <span class="error loginTip " ng-hide="getLoginName()">只能字母、数字, 最多16个字符</span>
+                                    </span>
+                                </div>
+                                <div class="alert nametipmsg success " ng-show="editBDForm.loginName.$dirty&&
+                                getLoginName()"></div>
+                            </div>
+
+                        </div>
+                        <!--登录密码校验-->
+                        <div class="form-group">
+                            <label for="password" class="col-lg-4 col-md-4 control-label">登录密码：</label>
+                            <div class="col-lg-4 col-md-4">
+                                <input type="password" class="form-control" name='password' id="password"
+                                       ng-model="user.password" ng-blur="getLoginPwd()"
+                                       placeholder="请输入密码..."
+                                       ng-pattern="/^[a-zA-Z0-9]{6,15}$/"
+                                       nh-minlength="6"
+                                       ng-maxlength="15"
+                                       required
+                                >
+                            </div>
+
+                            <div class="pwdTip error" ng-show="editBDForm.password.$dirty ">
+                                <span class="error requiredTip " ng-hide="getLoginPwd()">
+                                    密码长度在6-15之间!
+                                    <br>
+                                    只能包含字母、数字</span>
+                            </div>
+                            <div class="alert pwdOk " ng-show="editBDForm.password.$dirty && getLoginPwd()
+                                     "></div>
+                        </div>
+                        <!--上级BD-->
+                        <div class="form-group">
+                            <label class="col-lg-4 col-md-4 control-label">上级BD：</label>
+                            <div class="col-lg-8 col-md-8">
+                                <select class="form-control" ng-model="selectLeaderBD"
+                                        ng-options="item.userName for item in leaderBDs track by item.id" value="{{item.id}}"
+                                        ng-change="getLeaderBD()">
+                                </select>
+                            </div>
+                        </div>
+
+                        <!--不合法的时候显示-->
+                        <span ng-model="msg" class="submitTip" >{{msg}}</span>
+                        <!--是否是管理员校验-->
+                        <div class="form-group">
+                            <label class="col-lg-4 col-md-4 control-label">是否是管理员：</label>
+                            <div class="col-lg-4 col-md-4">
+                                <label class="radio-inline">
+                                    <input type="radio" name="manger" id="yes" value="1" ng-checked="true"
+                                           ng-model="user.manger"> 是
+                                </label>
+                                <label class="radio-inline">
+                                    <input type="radio" name="manger" id="no" value="0" ng-model="user.manger"> 否
+                                </label>
+                            </div>
+                        </div>
+
+                        <!--保存按钮-->
+                        <button type="submit" class="btn btn-default btn-primary"
+                                ng-disabled="editBDForm.$invalid"
+                                ng-click="submitEditBDData()" style="margin-left:40%">
+                            保存
+                        </button>
+                        <!--保存按钮-->
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

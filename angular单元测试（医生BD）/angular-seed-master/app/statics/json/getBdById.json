@@ -1,0 +1,26 @@
+{
+  "result": 0,
+  "message": [
+    {
+      "pagestart": 0,
+      "pagesize": 0,
+      "recordCount": 0,
+      "id": 2,
+      "userName": "潘晓璐2",
+      "loginName": "13521039417",
+      "password": null,
+      "mobile": "111111",
+      "gender": "1",
+      "kzTotal": 200,
+      "jjTotal": 210,
+      "managerTotal": 220,
+      "managerBdTotal": 230,
+      "leader": 4,
+      "leaderName": "单映东",
+      "addTime": "2016-08-17 17:39:26",
+      "updateTime": "2016-09-01 20:06:13",
+      "isAdmin": "0"
+    }
+  ],
+  "recordCount": 0
+}

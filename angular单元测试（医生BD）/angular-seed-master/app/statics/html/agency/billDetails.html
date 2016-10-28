@@ -1,0 +1,120 @@
+<!--头部-->
+<header>
+    <div class="logo"></div>
+    <div class="menu" ng-controller="BackToLoginCtrl"  >
+        <span ng-model="loginPerson" style="color:#fff;">{{loginPerson}}管理员</span>
+        <a href="javascript:void(0);" title="退出"><i ng-click="BackToLogin()"></i></a>
+    </div>
+</header>
+
+<!--内容区域-->
+<div class="allContainer clearfix">
+    <!--侧边栏-->
+    <div class="aside"></div>
+    <!--内容区-->
+    <div class="mainContainier">
+        <div class="btnBack" style="padding:20px 0  0 50px;">
+            <button type="button" class="btn btn-default detailsBack" ng-click="backBillList()"
+                    style="width:100px;height:40px;">
+                &lt;返回
+            </button>
+        </div>
+        <div class="billDetails clearfix">
+            <div class=" billLeft clearfix">
+                <div class="left_up clearfix">
+                    <ul>
+                        <li><span class="title">医生姓名：</span><span>{{userName}}</span></li>
+                        <li><span class="title">账单月份：</span><span ng-model="curMonth">{{curMonth}}月</span></li>
+                        <li><span class="title">收入总额：</span><span>{{curTotal}}</span></li>
+                    </ul>
+                </div>
+                <div class="left_down clearfix">
+                    <table class="table">
+                        <tr>
+                            <th>类型</th>
+                            <th>例数</th>
+                            <th>收入（元）</th>
+                        </tr>
+                        <tr>
+                            <td>CT</td>
+                            <td>{{curCT}}</td>
+                            <td>{{ctMoney}}</td>
+                        </tr>
+                        <tr>
+                            <td>MR</td>
+                            <td>{{curMR}}</td>
+                            <td>{{mrMoney}}</td>
+                        </tr>
+                        <tr>
+                            <td>DX</td>
+                            <td>{{curDX}}</td>
+                            <td>{{dxMoney}}</td>
+                        </tr>
+                        <tr>
+                            <td>CR</td>
+                            <td>{{curCR}}</td>
+                            <td>{{crMoney}}</td>
+                        </tr>
+                        <tr>
+                            <td>推荐大病</td>
+                            <td>{{curZjCount}}</td>
+                            <td>{{curZjCountMoney}}</td>
+                        </tr>
+                        <tr>
+                            <td>推荐片子</td>
+                            <td>{{curCgCount}}</td>
+                            <td>{{curCgCountMoney}}</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+            <div class=" billright clearfix">
+
+                <div class='right_up clearfix'>
+                    <div class="title">
+                        <h2>医生咨询量占比饼状图(本月)</h2>
+                    </div>
+
+                    <div class='pieParent'>
+                        <ul class="pieList">
+                            <li><i class="icon1 icon"></i><span style=" vertical-align: top;">CT</span></li>
+                            <li><i class="icon2 icon"></i><span>MR</span></li>
+                            <li><i class="icon3 icon"></i><span>DX</span></li>
+                            <li><i class="icon4 icon"></i><span>CR</span></li>
+                            <li><i class="icon5 icon"></i><span>推荐大病</span></li>
+                            <li><i class="icon6 icon"></i><span>推荐片子</span></li>
+                        </ul>
+                        <div class="pieChart" ng-controller="PieCtrl">
+                            <p class="pieChartTip" ng-model="msg" style="color:red;margin-left:30px;margin-top:-40px;float:left;">{{msg}}</p>
+                            <canvas id="pie" class="chart chart-pie"
+                                    chart-data="data" chart-labels="labels" chart-options="options">
+                            </canvas>
+                        </div>
+                    </div>
+                </div>
+                <div class='right_down clearfix'>
+                    <div class="title">
+                        <h2>医生咨询量占比柱状图</h2>
+                    </div>
+                    <div class='barParent'>
+                        <ul class="barList">
+                            <li><i class="icon1 icon"></i><span>上月</span></li>
+                            <li><i class="icon2 icon"></i><span>本月</span></li>
+                        </ul>
+                        <div class="barChart" ng-controller="BarCtrl" ng-hide='isHide'>
+                            <p class="barChartTip" ng-model="msgBar" style="color:red;margin-left:30px;margin-top:-40px;float:left;">{{msgBar}}</p>
+                            <canvas id="bar" class="chart chart-bar"
+                                    chart-data="data" chart-labels="labels"
+                                    chart-options="options" chart-colors="colors">
+                            </canvas>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+</div>
